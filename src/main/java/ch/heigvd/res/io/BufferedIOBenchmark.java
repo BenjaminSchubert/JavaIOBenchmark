@@ -255,14 +255,14 @@ public class BufferedIOBenchmark {
 			System.exit(2);
 		}
 
-		try(OutputStreamWriter size_log = new OutputStreamWriter(new FileOutputStream("./size.log"))) {
+		try(OutputStreamWriter size_log = new OutputStreamWriter(new FileOutputStream("./report/size.log"))) {
 			size_log.write(Long.toString(BufferedIOBenchmark.NUMBER_OF_BYTES_TO_WRITE));
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.exit(2);
 		}
 
-		try (AbstractTestResultLogger resultLogger = new CSVResultLogger(new FileOutputStream("./metrics.csv"))){
+		try (AbstractTestResultLogger resultLogger = new CSVResultLogger(new FileOutputStream("./report/metrics.csv"))){
 			runBenchmark(resultLogger, Integer.parseInt(args[0]));
 		} catch (IOException e) {
 			e.printStackTrace();

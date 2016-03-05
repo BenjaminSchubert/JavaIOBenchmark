@@ -32,16 +32,15 @@ help:
 
 clean:
 	rm -rf $(BUILDDIR)/*
-	rm -f experiment/test-*
-	rm -f experiment/metrics.csv
-	cd experiment && mvn clean
+	rm -f test-*
+	mvn clean
 
 collect:
 	sh scripts/system_info.sh
-	cd experiment && mvn compile exec:java -Dexec.args="$(SYSTEM_BLOCK_SIZE)" && cd ..
+	mvn compile exec:java -Dexec.args="$(SYSTEM_BLOCK_SIZE)"
 
 data:
-	python3 scripts/graph.py experiment/metrics.csv
+	python3 scripts/graph.py report/metrics.csv
 
 latex:
 	mkdir -p $(BUILDDIR)/latex
@@ -55,4 +54,5 @@ latex:
 latexpdf: latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
+	cp $(BUILDDIR)/latex/RES*.pdf report/
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."

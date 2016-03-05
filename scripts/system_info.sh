@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-file=_build/system_info.inc
+file=report/system_info.inc
 
 
 echo -e "\t* Processeur: `lscpu | grep "Model name" | cut -d " " -f 14-`" > ${file}

@@ -8,7 +8,9 @@ This was done for a network class in HEIG-VD in March 2016.
 Experiment report
 -----------------
 
-If you just want to see the experiment's result, the data I harvested can be found `here <https://github.com/BenjaminSchubert/JavaIOBenchmark/tree/master/report_data>`_ and the pdf report (in French) `here <https://github.com/BenjaminSchubert/JavaIOBenchmark/blob/master/report_data/RESLab01JavaIO.pdf>`_
+If you just want to see the experiment's result, the data I harvested can be found
+`here <https://github.com/BenjaminSchubert/JavaIOBenchmark/tree/master/report>`_ and the pdf report (in French)
+`here <https://github.com/BenjaminSchubert/JavaIOBenchmark/blob/master/report/RESLab01JavaIO.pdf>`_
 
 
 Run the experiment

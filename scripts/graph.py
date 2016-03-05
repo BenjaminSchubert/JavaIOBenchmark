@@ -75,8 +75,8 @@ def create_graph(data, name, limit=None):
     fig.legend(handles=legends, labels=legend_labels, prop={"size": 18})
 
     plt.tight_layout()
-    os.makedirs("./_build", exist_ok=True)
-    plt.savefig("./_build/{}.eps".format(name))
+    os.makedirs("./report/", exist_ok=True)
+    plt.savefig("./report/{}.eps".format(name))
 
 
 if __name__ == "__main__":
