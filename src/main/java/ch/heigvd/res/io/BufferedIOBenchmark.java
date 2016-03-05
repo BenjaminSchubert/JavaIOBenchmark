@@ -152,7 +152,7 @@ public class BufferedIOBenchmark {
 			}
 		}
 
-        long timeTaken = Timer.takeTime();
+		long timeTaken = Timer.takeTime();
 		LOG.log(Level.INFO, "  > Done in {0} ms.", timeTaken);
         return new TestResult(OperationType.READ, ioStrategy, blockSize, dataRead, timeTaken);
 	}
