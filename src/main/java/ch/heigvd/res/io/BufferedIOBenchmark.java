@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  * This is a very simple program, which main objective is to show that you can
- * observe very significant performance differences, depending on you implement
+ * observe very significant performance differences, depending on how you implement
  * IO processing. 
  * 
  * Running the program allows you to compare both the WRITING and the READING of

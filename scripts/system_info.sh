@@ -9,6 +9,8 @@ echo -e "\t* Vitesse d'écriture disque: `dd if=/dev/zero of=tempfile bs=1M coun
 
 echo -e "\t* Vitesse de lecture disque: `dd if=tempfile of=/dev/null bs=1M count=10000 status=progress 2>&1 | tail -n 1 | cut -d " " -f 8-`" >> ${file}
 
+echo -e "\t* Système d'exploitation: `uname`">> ${file}
+
 echo -e "\t* Version du Kernel: `uname -r`" >> ${file}
 
 echo -e "\t* Version de java: `java -version 2>&1 | head -n1`" >> ${file}
