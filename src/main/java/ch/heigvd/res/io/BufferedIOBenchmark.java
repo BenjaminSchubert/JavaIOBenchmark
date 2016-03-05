@@ -122,7 +122,7 @@ public class BufferedIOBenchmark {
 	 */
 	private TestResult consumeTestData(IOStrategy ioStrategy, int blockSize) {
 		LOG.log(Level.INFO, "Consuming test data ({0}, block size: {1}...", new Object[]{ioStrategy, blockSize});
-        int dataRead = 0;
+		int dataRead = 0;
 		Timer.start();
 
 		InputStream is = null;
@@ -154,7 +154,7 @@ public class BufferedIOBenchmark {
 
 		long timeTaken = Timer.takeTime();
 		LOG.log(Level.INFO, "  > Done in {0} ms.", timeTaken);
-        return new TestResult(OperationType.READ, ioStrategy, blockSize, dataRead, timeTaken);
+		return new TestResult(OperationType.READ, ioStrategy, blockSize, dataRead, timeTaken);
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class BufferedIOBenchmark {
 		}
 		
 		LOG.log(Level.INFO, "Number of bytes read: {0}", new Object[]{totalBytes});
-        return totalBytes;
+		return totalBytes;
 	}
 
 	/**
@@ -268,6 +268,6 @@ public class BufferedIOBenchmark {
 			e.printStackTrace();
 			System.exit(4);
 		}
-    }
+	}
 
 }
