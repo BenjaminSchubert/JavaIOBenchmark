@@ -84,4 +84,4 @@ if __name__ == "__main__":
         print("No file with data was specified\n[Usage] graph.py file")
     data = read_data(sys.argv[1])
     create_graph(data, "graph-complete")
-    create_graph(data, "graph-start", 60)
+    create_graph(data, "graph-start", 128)

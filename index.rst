@@ -52,15 +52,18 @@ de 100 MB, avec sur l'axe X la taille des blocs utilisés et sur l'axe Y, le tem
 Analyse
 =======
 
-Sur le graphique :ref:`results`, nous constatons que le temps de lecture et d'écriture diminue de manière proportionnelle à
-la taille des blocs de lecture/écriture jusqu'à une taille limite, qui correspond à deux fois la taille des blocs du
+Sur le graphique :ref:`results`, nous constatons que le temps de lecture diminue de manière proportionnelle à
+la taille des blocs de lecture jusqu'à une taille limite, qui correspond à la taille d'un blocs du
 système de fichier. Après ceci, les performances commencent à se dégrader.
+
+Du côté de l'écriture, les performances avec un buffer, sont plus performantes pour de petites taille, bien que les
+grosses différentes dans les performances limitent les analyses pouvant être faites ici.
 
 Nous pouvons aussi noter une amélioration locale des performances à chaque fois que la taille de lecture/écriture est un
 multiple ou diviseur de la taille de blocs du système de fichier.
 
-Nous pouvons noter qu'à partir d'une certaine taille de bloc, soit la taille des blocs du système de fichier, l'écriture
-avec un tampon devient légèrement moins efficace que celle sans tampon. Il serait donc bon dans les applications, et lors
+Nous pouvons noter qu'à partir d'une certaine taille de bloc, soit la taille des blocs du système de fichier, la lecture
+avec un tampon devient légèrement moins efficace que celle sans tampon. Il serait donc bon dans les applications, lors
 de grosses lectures, de ne pas utiliser de tampon.
 
 Nous pouvons aussi constater que les performances d'écritures sont beaucoup moins régulières que les performances en lecture,
@@ -68,7 +71,7 @@ mais dans la tendance générale, nous pouvons dire que le tampon reste plus per
 
 Pour conclure nous pouvons voir qu'il vaut mieux utiliser des tampons lorsque nous lisons et écrivons de petits blocs de
 données, et qu'à partir d'une certaine taille, le tampon n'ajoute plus grand bénéfice. Le point le plus important étant
-qu'il faut que la quantité de donées lues ou écrites ou la taille du tampon soit un multiple ou un diviseur de la taille
+qu'il faut que la quantité de données lues ou écrites ou la taille du tampon soit un multiple ou un diviseur de la taille
 des blocs du système de fichiers afin d'observer les meilleures performances.
 
 
@@ -82,7 +85,6 @@ afin de pouvoir écrire facilement avec des `Strings`. Ce loggeur implémente au
 faciliter la gestion, grâce aux nouvelles capacités implémentées en Java 7.
 
 Nous avons ensuite spécialisé ce loggeur, pour qu'il enregistre ses données en CSV, dans la classe `CSVResultLogger`.
-
 Dans le programe principal, nous passons un `FileOutputStream` à ce loggeur, afin d'écrire ces données dans un fichier.
 
 Nous avons ensuite remplacé la partie principale du programme qui ne faisait que quelques tests par une série de tests,

@@ -99,7 +99,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'RESLab01JavaIO.tex', 'RES : Lab 01, Java IO',
-   'Benjamin Schubert', 'lab_report'),
+   'Benjamin Schubert: https://github.com/BenjaminSchubert/JavaIOBenchmark', 'lab_report'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
